@@ -29,4 +29,4 @@ até aqui - não quer dizer que não possam mudar até o final do projeto caso a
 - Características/diferenciais importantes do projeto (este é um tópico adicional para complementar os tópicos
 Descrição e Estrutura do Projeto, a ideia é escrever um pouco mais de "quantidade" de texto sem ser apenas uma
 listinha, tentem detalhar pontos chave que vocês acham fundamental ter no sistema de vocês [independente de qual
-tela eles estarão])
+tela eles estarão]).
