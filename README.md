@@ -34,7 +34,7 @@ fluxograma visual conectando telas e links em uma estrutura gráfica)
 - "Cliente" ou Público-alvo (quem é o interessado em usar o APP de vcs e porque eles usariam ~ qual a real
 necessidade deles para serem seus "clientes")
 
-      Funcionários da Instituição SATC
+      O app visa otmizar o processo de agendamento do horário no dentista da SATC. Hoje o funcionário não tem nenhuma ferramenta que possa consultar os horários disponíveis e nem solicitar o agendamento, para realizar esses processos, é necessário que o colaborador vá até o setor de assistência social ou entre em contato com o setor por outros meios, para que a assitente social informe os possíveis horários e faça o agendamento. O processo é lento e pouco eficiente, com nosso app de agendamento o colaborador concluirá o processo, que hoje pode levar mais de um dia, em poucos minutos.
 
 - Tecnologias, bibliotecas e frameworks que já decidiram usar ao longo do projeto daqui em diante, por exemplo,
 iremos usar React com Vite.js e TypeScript, além de Radix e TailwindCSS para facilitar no design e etc (tecnologia
