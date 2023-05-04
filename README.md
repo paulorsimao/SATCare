@@ -2,7 +2,7 @@
 
 - Nome/Título do Projeto (pensem como um startupeiro, deem um título para este sistema/produto, uma marca):
 
-      DentalSATC
+      SATCare
 
 - Lista de Integrantes da Equipe:
 
@@ -14,13 +14,13 @@
 
 - Descrição do Projeto (entregue em um único parágrafo o que aquele produto irá fazer)
 
-      DentalSATC é um webapp de agendamento de consultas odontológicas para funcionários da instituição SATC.
+      SATCare é um webapp de agendamento de consultas odontológicas e psicológicas para funcionários da instituição SATC.
       Com a possibilidade de agendar, cancelar e visualizar suas consultas, os funcionários poderão gerenciar
       seus atendimentos com mais facilidade e comodidade.
 
 - Objetivo do Projeto (qual problema/objetivo a solução de vocês busca resolver/ajudar)
 
-      O objetivo do DentalSATC é resolver o problema da dificuldade de agendamento de consultas odontológicas 
+      O objetivo do SATCare é resolver o problema da dificuldade de agendamento de consultas odontológicas e psicológicas 
       para funcionários da instituição SATC. Com a utilização do webapp, os funcionários poderão agendar suas
       consultas de forma rápida e fácil, sem precisar se deslocar até o setor de assistência social para marcar horário.
 
@@ -36,7 +36,7 @@ fluxograma visual conectando telas e links em uma estrutura gráfica)
 - "Cliente" ou Público-alvo (quem é o interessado em usar o APP de vcs e porque eles usariam ~ qual a real
 necessidade deles para serem seus "clientes")
 
-      O app visa otmizar o processo de agendamento do horário no dentista da SATC. Hoje o funcionário não tem 
+      O app visa otmizar o processo de agendamento do horário no dentista e psicólogo da SATC. Hoje o funcionário não tem 
       nenhuma ferramenta que possa consultar os horários disponíveis e nem solicitar o agendamento, para realizar 
       esses processos, é necessário que o colaborador vá até o setor de assistência social ou entre em contato com 
       o setor por outros meios, para que a assitente social informe os possíveis horários e faça o agendamento. O 
@@ -47,8 +47,7 @@ necessidade deles para serem seus "clientes")
 iremos usar React com Vite.js e TypeScript, além de Radix e TailwindCSS para facilitar no design e etc (tecnologia
 até aqui - não quer dizer que não possam mudar até o final do projeto caso achem algo melhor)
 
-      Para o desenvolvimento do DentalSATC, serão utilizadas as tecnologias React, Ant Design (Antd) e Vite.js.
-      Também serão utilizados TypeScript, Radix e TailwindCSS para facilitar no design e na organização do código.
+      Para o desenvolvimento do SATCare, serão utilizadas as tecnologias React, Ant Design (Antd) e Vite.js.
 
 - Características/diferenciais importantes do projeto (este é um tópico adicional para complementar os tópicos
 Descrição e Estrutura do Projeto, a ideia é escrever um pouco mais de "quantidade" de texto sem ser apenas uma
