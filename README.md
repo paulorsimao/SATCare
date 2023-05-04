@@ -22,7 +22,7 @@
 
       O objetivo do DentalSATC é resolver o problema da dificuldade de agendamento de consultas odontológicas 
       para funcionários da instituição SATC. Com a utilização do webapp, os funcionários poderão agendar suas
-      consultas de forma rápida e fácil, sem precisar se deslocar até a clínica para marcar horário.
+      consultas de forma rápida e fácil, sem precisar se deslocar até o setor de assistência social para marcar horário.
 
 - Estrutura do Projeto (pode ser uma lista de principais telas e um breve descritivo do que irá ter em cada uma OU
 fluxograma visual conectando telas e links em uma estrutura gráfica)
