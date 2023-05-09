@@ -1,6 +1,7 @@
 # SATC ABP - Front End
 
 ## Projeto: <b>SATCare</b>
+![image](https://github.com/paulorsimao/SATCare/assets/112284509/f812955b-8dd2-488a-9d27-4366b45b6b0b)
 
 <br>
 
