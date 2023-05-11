@@ -2,6 +2,8 @@
 
 ## Projeto: <b>SATCare</b>
 
+<img src='./public/logo.jpg' style='display: block; margin-left: auto; margin-right: auto; border-radius: 20%;'>
+
 <br>
 
 ## Integrantes
@@ -76,3 +78,11 @@ Possibilidade de visualizar as consultas agendadas de forma clara e organizada
 Sistema de cancelamento de consultas fácil e prático
 Integração com a agenda dos dentistas, para evitar conflitos de horário.
 </p>
+
+## Instalar e Rodar
+
+```bash
+npm install
+
+npm run dev
+```
