@@ -2,7 +2,8 @@
 
 ## Projeto: <b>SATCare</b>
 
-<img src='https://github.com/paulorsimao/SATCare/assets/112284509/f812955b-8dd2-488a-9d27-4366b45b6b0b' style="display: block; margin-left: auto; margin-right: auto; border-radius: 20%;">
+<img src='https://github.com/paulorsimao/SATCare/assets/112284509/f812955b-8dd2-488a-9d27-4366b45b6b0b' style='display: block; margin-left: auto; margin-right: auto; border-radius: 20%;'>
+
 <br>
 
 ## Integrantes
