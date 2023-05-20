@@ -1,18 +1,24 @@
-import { useState } from "react";
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import logo from "/logo.jpg";
 import "./App.css";
+import { ConfigProvider, theme } from "antd";
+import themeOptions from './antd.theme.json'
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import withAdminLayout from "./layouts/admin-layout/withAdminLayout";
 
 function App() {
 	return (
-		<>
-			<div>
-				{/* <a href="https://vitejs.dev" target="_blank"> */}
-				<img src={logo} style={{ width: '40vh', height: 'auto', borderRadius: '50px' }} className="logo" alt="Vite logo" />
-				{/* </a> */}
-			</div>
-		</>
+		<ConfigProvider theme={{
+			...themeOptions,
+			algorithm: theme.darkAlgorithm,
+		}}>
+			<Router>
+				<Routes>
+					<Route path='/' Component={() => withAdminLayout('Home')} />
+					<Route path='/home' Component={() => withAdminLayout('Home')} />
+					<Route path='/usuarios' Component={() => withAdminLayout('Usuários')} />
+					<Route path='/profissionais' Component={() => withAdminLayout('Profissionais')} />
+				</Routes>
+			</Router>
+		</ConfigProvider>
 	);
 }
 
