@@ -1,7 +1,5 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
-import { TelaCadastro } from './styled';
-
 const onFinish = (values: any) => {
   console.log('Success:', values);
 };
@@ -11,7 +9,6 @@ const onFinishFailed = (errorInfo: any) => {
 };
 
 const cadastro: React.FC = () => (
-  <TelaCadastro>
   <Form
     name="basic"
     labelCol={{ span: 8 }}
@@ -70,7 +67,6 @@ const cadastro: React.FC = () => (
       </Button>
     </Form.Item>
   </Form>
-  </TelaCadastro>
 );
 
 export default cadastro;
