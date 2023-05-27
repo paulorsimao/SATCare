@@ -3,6 +3,7 @@ import { ConfigProvider, } from "antd";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import withAdminLayout from "./layouts/admin-layout/withAdminLayout";
 import cadastro from "./features/usuarios/components/cadastro-usuarios/cadastro";
+import calendario from "./features/usuarios/components/calendar/calendario";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 					<Route path='/usuarios' Component={() => withAdminLayout('Usuários')} />
 					<Route path='/profissionais' Component={() => withAdminLayout('Profissionais')} />
 					<Route path='/cadastro' Component={cadastro} />
+					<Route path='/calendario' Component={calendario} />
 				</Routes>
 			</Router>
 		</ConfigProvider>

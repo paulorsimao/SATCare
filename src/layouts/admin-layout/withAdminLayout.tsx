@@ -1,7 +1,9 @@
 import React from "react";
 import {
+	CalendarOutlined,
 	HeartOutlined,
 	HomeOutlined,
+	LoginOutlined,
 	UserOutlined,
 } from "@ant-design/icons";
 import { Col, MenuProps, Row } from "antd";
@@ -42,6 +44,8 @@ function withAdminLayout(titulo: string) {
 						{ key: 'home', label: 'Home', icon: <HomeOutlined /> },
 						{ key: 'usuarios', label: 'Usuarios', icon: <UserOutlined /> },
 						{ key: 'profissionais', label: 'Profissionais', icon: <HeartOutlined /> },
+						{ key: 'cadastro', label: 'Cadastro', icon: <LoginOutlined />},
+						{ key: 'calendario', label: 'Calendario', icon: <CalendarOutlined /> },
 					]}
 				/>
 			</Row>

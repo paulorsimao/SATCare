@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
+import { TelaCadastro } from './styled';
 
 const onFinish = (values: any) => {
   console.log('Success:', values);
@@ -10,6 +11,7 @@ const onFinishFailed = (errorInfo: any) => {
 };
 
 const cadastro: React.FC = () => (
+  <TelaCadastro>
   <Form
     name="basic"
     labelCol={{ span: 8 }}
@@ -47,7 +49,7 @@ const cadastro: React.FC = () => (
     <Form.Item
       label="Password"
       name="password"
-      rules={[{ required: true, message: 'Please input your password!' }]}
+      rules={[{ required: true, message: 'Por favor insira a senha!' }]}
     >
       <Input.Password />
     </Form.Item>
@@ -68,6 +70,7 @@ const cadastro: React.FC = () => (
       </Button>
     </Form.Item>
   </Form>
+  </TelaCadastro>
 );
 
 export default cadastro;
