@@ -8,7 +8,7 @@ const onFinishFailed = (errorInfo: any) => {
   console.log('Failed:', errorInfo);
 };
 
-const cadastro: React.FC = () => (
+const CadatroUsuario: React.FC = () => (
   <Form
     name="basic"
     labelCol={{ span: 8 }}
@@ -69,4 +69,4 @@ const cadastro: React.FC = () => (
   </Form>
 );
 
-export default cadastro;
+export default CadatroUsuario;

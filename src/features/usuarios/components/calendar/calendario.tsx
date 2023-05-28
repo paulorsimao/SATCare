@@ -3,7 +3,7 @@ import { Alert, Calendar } from 'antd';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 
-const calendario: React.FC = () => {
+const Calendario: React.FC = () => {
   const [valor, setValor] = useState(() => dayjs('2017-01-25'));
   const [valorSelecionado, setValorSelecionado] = useState(() => dayjs('2017-01-25'));
 
@@ -24,4 +24,4 @@ const calendario: React.FC = () => {
   );
 };
 
-export default calendario;
+export default Calendario;
