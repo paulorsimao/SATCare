@@ -10,7 +10,8 @@ import { Layout } from "antd";
 import { Menu } from "antd";
 import { Outlet, useNavigate } from "react-router-dom";
 import Sider from "antd/es/layout/Sider";
-import {  Content, Footer } from "antd/es/layout/layout";
+import { Content, Footer } from "antd/es/layout/layout";
+import './admin-layout.css'
 
 function AdminLayout() {
 	const navigate = useNavigate();
@@ -19,6 +20,12 @@ function AdminLayout() {
 	return (
 		<Layout style={{ minHeight: '100vh' }}>
 			<Sider theme={'light'} collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} breakpoint="lg">
+				<div className="sider-logo">
+					<img
+						src="/logo.png"
+						alt="Logo SAtCare"
+					/>
+				</div>
 				<Menu mode="inline" onSelect={({ key }) => navigate(key)} items={[
 					{ key: 'home', label: 'Home', icon: <HomeOutlined /> },
 					{ key: 'usuarios', label: 'Usuários', icon: <UserOutlined /> },

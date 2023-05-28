@@ -1,0 +1,10 @@
+.sider-logo {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.sider-logo img {
+  width: 3.2rem;
+  margin: 0 8px;
+}
