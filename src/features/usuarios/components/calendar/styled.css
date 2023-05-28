@@ -1,0 +1,32 @@
+/* styled.css */
+
+.horarios-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas com largura igual */
+    grid-auto-rows: 1fr; /* Altura igual para cada linha */
+  }
+  
+  .horario-button {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+.calendar-header {
+  text-align: center;
+  background-color: #295E9D;
+  padding: 1%;
+  color: #fff;
+  font-size: large;
+}
+
+.prev-month-button,
+.next-month-button {
+  margin: 0 10%;
+  background-color: #69b75a;
+  color: #fff;
+}
+
+.calendar-slot.weekend .horario-button {
+  display: none; /* Ocultar horários nos fins de semana */
+}
