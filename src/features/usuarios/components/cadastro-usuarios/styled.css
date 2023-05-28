@@ -1,0 +1,23 @@
+#blocoCadastro {
+    padding: 1%;
+    background-color: #295E9D;
+    border-radius: 8px;
+    border: 10%;
+    margin: 5%;
+    font-family: inherit;
+}
+
+#btnCadastro {
+    background-color: #69b75a;
+    color: #fff;
+    text-align: start;
+    display: flex;
+}
+
+#btnEntrar {
+    background-color: #69b75a;
+    color: #fff;
+    margin-left: 50%;
+    display: flex;
+    text-align: end;
+}

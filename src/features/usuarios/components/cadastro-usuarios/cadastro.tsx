@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
+import './styled.css'
+
 const onFinish = (values: any) => {
   console.log('Success:', values);
 };
@@ -9,6 +11,7 @@ const onFinishFailed = (errorInfo: any) => {
 };
 
 const cadastro: React.FC = () => (
+  <div id= 'blocoCadastro'>
   <Form
     name="basic"
     labelCol={{ span: 8 }}
@@ -44,29 +47,23 @@ const cadastro: React.FC = () => (
     </Form.Item>
 
     <Form.Item
-      label="Password"
-      name="password"
+      label="Senha"
+      name="senha"
       rules={[{ required: true, message: 'Por favor insira a senha!' }]}
     >
       <Input.Password />
     </Form.Item>
 
-    <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-      <Checkbox>Remember me</Checkbox>
-    </Form.Item>
-
     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-      <Button type="primary" htmlType="submit">
-        Cadastrar
+      <Button id="btnCadastro" htmlType="submit">
+        CADASTRAR
       </Button>
-    </Form.Item>
-
-    <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-      <Button type="primary" htmlType="submit">
-        Entrar
+      <Button id="btnEntrar" htmlType="submit">
+        ENTRAR
       </Button>
     </Form.Item>
   </Form>
+  </div>
 );
 
 export default cadastro;
