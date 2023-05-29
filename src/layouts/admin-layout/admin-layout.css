@@ -8,3 +8,9 @@
   width: 3.2rem;
   margin: 0 8px;
 }
+
+#footerPrincipal {
+  background-color: #053F33; 
+  padding: 1%;
+  color: #FFFFFF;
+}

@@ -38,7 +38,7 @@ function AdminLayout() {
 				<Content style={{ margin: '16px' }}>
 					<Outlet />
 				</Content>
-				<Footer style={{ textAlign: 'center' }}>SATCare ©2023</Footer>
+				<Footer id='footerPrincipal' style={{ textAlign: 'center', }}>SATCare ©2023</Footer>
 			</Layout>
 		</Layout>
 	);

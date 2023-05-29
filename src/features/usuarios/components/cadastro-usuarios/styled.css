@@ -2,8 +2,8 @@
 
 #blocoCadastro {
     background-color: #295E9D;
-    max-width: 20%;
-    margin: 7% auto; /* Adicione margens superior e inferior */
+    max-width: 40%;
+    margin: 10% auto; /* Adicione margens superior e inferior */
     padding: 2%;
     border-radius: 5%;
     display: flex;
