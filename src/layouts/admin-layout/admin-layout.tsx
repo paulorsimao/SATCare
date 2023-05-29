@@ -5,6 +5,7 @@ import {
 	HomeOutlined,
 	LoginOutlined,
 	UserOutlined,
+	PlusCircleOutlined,
 } from "@ant-design/icons";
 import { Layout } from "antd";
 import { Menu } from "antd";
@@ -31,6 +32,7 @@ function AdminLayout() {
 					{ key: 'usuarios', label: 'Usuários', icon: <UserOutlined /> },
 					{ key: 'profissionais', label: 'Profissionais', icon: <HeartOutlined /> },
 					{ key: 'cadastro', label: 'Cadastro', icon: <LoginOutlined /> },
+					{ key: 'consulta', label: 'Consulta', icon: <PlusCircleOutlined /> },
 					{ key: 'calendario', label: 'Calendário', icon: <CalendarOutlined /> },
 				]} />
 			</Sider>
