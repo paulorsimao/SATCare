@@ -32,6 +32,7 @@ function AdminLayout() {
 					{ key: 'profissionais', label: 'Profissionais', icon: <HeartOutlined /> },
 					{ key: 'cadastro', label: 'Cadastro', icon: <LoginOutlined /> },
 					{ key: 'calendario', label: 'Calendário', icon: <CalendarOutlined /> },
+					{ key: 'login', label: 'login', icon: <LoginOutlined /> },
 				]} />
 			</Sider>
 			<Layout>
