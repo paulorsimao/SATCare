@@ -1,0 +1,81 @@
+/* styled.css */
+
+.calendar-header {
+  text-align: center;
+  background-color: #295E9D;
+  padding: 1%;
+  color: #fff;
+  font-size: large;
+}
+
+.prev-month-button,
+.next-month-button {
+  margin: 0 10%;
+  background-color: #69b75a;
+  color: #fff;
+}
+
+.calendar-slot.weekend .horario-button {
+  display: none; /* Hide time slots on weekends */
+}
+
+.custom-calendar .ant-picker-cell-inner:hover {
+  background-color: #f5f5f5;
+}
+
+.day-cell {
+  position: relative;
+  cursor: pointer;
+}
+
+.day-number {
+  text-align: center;
+  font-size: 20px; /* Tamanho da fonte dos dias */
+  font-family: 'Arial', sans-serif; /* Estilo da fonte dos dias */
+  /* Adicione outros estilos desejados, como cor, espaçamento, etc. */
+}
+
+.day-cell.selected {
+  background-color: #f3f3f3;
+}
+
+.day-cell:hover {
+  background-color: #f3f3f3;
+}
+
+.time-slots {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.horario-button {
+  background-color: #69b75a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  width: calc(50% - 5px); /* Adjust width to fit 2 time slots in a row */
+  margin-bottom: 5px; /* Add margin between time slots */
+}
+
+.horario-button.selected {
+  background-color: #4f8e41;
+}
+
+.horarios-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns with equal width */
+  grid-auto-rows: auto; /* Auto height for each row */
+  gap: 5px; /* Add gap between time slots */
+}
+

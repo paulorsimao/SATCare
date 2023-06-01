@@ -12,9 +12,14 @@
   "dependencies": {
     "@ant-design/icons": "^5.1.0",
     "antd": "^5.4.7",
+    "dayjs": "^1.11.7",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.1"
+    "react-router-dom": "^6.11.2",
+    "react-time-picker": "^6.2.0",
+    "save": "^2.9.0",
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@types/node": "^20.1.3",

@@ -1,23 +1,36 @@
 import "./App.css";
-import { ConfigProvider, theme } from "antd";
-import themeOptions from './antd.theme.json'
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import withAdminLayout from "./layouts/admin-layout/withAdminLayout";
+import { ConfigProvider, } from "antd";
+import { RouterProvider } from "react-router-dom";
+import { theme } from 'antd'
+import customTheme from './antd.theme.json'
+import router from "./routes";
+import { useEffect, useState } from "react";
 
 function App() {
+	const [darkMode, setDarkMode] = useState(
+		window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+	);
+
+	useEffect(() => {
+		const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+
+		mediaQueryList.onchange = (e: MediaQueryListEvent) => {
+			setDarkMode(e.matches);
+		};
+
+		return () => {
+			mediaQueryList.onchange = () => { };
+		};
+	}, []);
+
 	return (
-		<ConfigProvider theme={{
-			...themeOptions,
-			algorithm: theme.darkAlgorithm,
-		}}>
-			<Router>
-				<Routes>
-					<Route path='/' Component={() => withAdminLayout('Home')} />
-					<Route path='/home' Component={() => withAdminLayout('Home')} />
-					<Route path='/usuarios' Component={() => withAdminLayout('Usuários')} />
-					<Route path='/profissionais' Component={() => withAdminLayout('Profissionais')} />
-				</Routes>
-			</Router>
+		<ConfigProvider
+			theme={{
+				algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
+				...customTheme
+			}}
+		>
+			<RouterProvider router={router} />
 		</ConfigProvider>
 	);
 }
