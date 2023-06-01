@@ -1,0 +1,29 @@
+#tudo {
+    background-color: #295E9D;
+    max-width: 20%;
+    margin: 10% auto; /* Adicione margens superior e inferior */
+    padding: 10%;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: row; /* Altere para flex-direction: row */
+    justify-content: space-between; /* Adicione para espaçar os botões */
+    align-items: center;
+}
+
+#btnCadastro,
+#btnEntrar {
+    background-color: #69b75a;
+    color: #fff;
+    display: flex;
+}
+
+#btnCadastrar:hover,
+#btnEntrar:hover {
+    background-color: #4f8e41;
+}
+
+#tipo {
+    justify-content: center;
+
+}
+
