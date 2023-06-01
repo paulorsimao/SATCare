@@ -3,14 +3,15 @@ import AdminLayout from "../layouts/admin-layout/admin-layout";
 import ListaUsuarios from "../features/usuarios/components/cadastro-usuarios/lista-usuarios";
 import CadatroUsuario from "../features/usuarios/components/cadastro-usuarios/cadastro";
 import Calendario from "../features/usuarios/components/calendar/calendario";
-import Login from "../features/usuarios/components/login/login";
+import NovaConsulta from "../features/usuarios/components/cadastro-consulta/nova-consulta";
+>>>>>>> 70cb78e9a3dd2266ff48e8af84c3a132aeb1230c
 
 const adminRoutes: RouteObject = {
     path: '/admin',
     element: <AdminLayout />,
     children: [
         {
-            path: 'home',
+            path: 'home', 
             element: <h1>Home page</h1>
         },
         {
@@ -22,12 +23,12 @@ const adminRoutes: RouteObject = {
             element: <CadatroUsuario/>
         },
         {
-            path: 'calendario',
-            element: <Calendario/>
+            path: 'consulta',
+            element: <NovaConsulta/>
         },
         {
-            path: 'Login',
-            element: <Login/>
+            path: 'calendario',
+            element: <Calendario/>
         },
     ]
 }
