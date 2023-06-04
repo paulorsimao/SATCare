@@ -2,16 +2,18 @@
 
 ## Projeto: <b>SATCare</b>
 
-<img src='./public/logo.jpg' style='display: block; margin-left: auto; margin-right: auto; border-radius: 20%;'>
-
+<div align="center">
+  <img src="./public/logo.jpg" alter="logo">
+</div>
+  
 <br>
 
 ## Integrantes
-* Arthur de Luca Honorato
-* Guilherme Machado Darabas
-* Paulo Roberto Simão
-* Rubens Scotti Junior
-* Stephan  Anthony  Marques
+* [Arthur de Luca Honorato](https://github.com/arthurdelucahonorato)
+* [Guilherme Machado Darabas](https://github.com/gmdarabas)
+* [Paulo Roberto Simão](https://github.com/paulorsimao)
+* [Rubens Scotti Junior](https://github.com/rubensscotti)
+* [Stephan  Anthony  Marques](https://github.com/stephan-anthony)
 
 <br>
 
