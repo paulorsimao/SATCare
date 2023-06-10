@@ -1,21 +1,31 @@
 import { useState } from "react";
-import {
-    CalendarOutlined,
-    HeartOutlined,
-    HomeOutlined,
-    LoginOutlined,
-    UserOutlined,
-} from "@ant-design/icons";
-import { Layout } from "antd";
+import { Layout, notification } from "antd";
 import { Menu } from "antd";
 import { Outlet, useNavigate } from "react-router-dom";
 import Sider from "antd/es/layout/Sider";
 import { Content, Footer } from "antd/es/layout/layout";
 import './admin-layout.css'
+import { useAuthContext } from "../../features/auth/providers/auth-context";
 
-function AdminLayout() {
+interface LayoutProps {
+    menuItens: Array<MenuOptions>
+}
+
+export interface MenuOptions {
+    key: string;
+    label: string;
+    icon: JSX.Element
+}
+
+function AdminLayout({ menuItens }: LayoutProps) {
     const navigate = useNavigate();
     const [collapsed, setCollapsed] = useState(false)
+    const { authContext } = useAuthContext();
+
+    if (!authContext) {
+        notification.error({ message: 'É preciso estar logado para acessar esta área' })
+        navigate('/login')
+    }
 
     return (
         <Layout style={{ minHeight: '100vh' }}>
@@ -26,14 +36,7 @@ function AdminLayout() {
                         alt="Logo SAtCare"
                     />
                 </div>
-                <Menu mode="inline" onSelect={({ key }) => navigate(key)} items={[
-                    { key: 'home', label: 'Home', icon: <HomeOutlined /> },
-                    { key: 'usuarios', label: 'Usuários', icon: <UserOutlined /> },
-                    { key: 'profissionais', label: 'Profissionais', icon: <HeartOutlined /> },
-                    { key: 'cadastro', label: 'Cadastro', icon: <LoginOutlined /> },
-                    { key: 'calendario', label: 'Calendário', icon: <CalendarOutlined /> },
-                    { key: 'login', label: 'login', icon: <LoginOutlined /> },
-                ]} />
+                <Menu mode="inline" onSelect={({ key }) => navigate(key)} items={menuItens} />
             </Sider>
             <Layout>
                 <Content style={{ margin: '16px' }}>
