@@ -1,0 +1,20 @@
+[
+    {
+      "nome": "Anderson",
+      "sobrenome": "Farias",
+      "especialidade": "Psicólogo",
+      "id": 1
+    },
+    {
+      "nome": "Vagner",
+      "sobrenome": "Rodrigues",
+      "especialidade": "Psicólogo",
+      "id": 2
+    },
+    {
+      "nome": "Lucas",
+      "sobrenome": "Ferreira",
+      "especialidade": "Dentista",
+      "id": 3
+    }   
+]
