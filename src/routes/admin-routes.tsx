@@ -5,7 +5,7 @@ import Calendario from "../features/usuarios/components/calendar/calendario";
 import { CalendarOutlined, HeartOutlined, HomeOutlined, LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import NotFoundRedirect from "./not-found-redirect";
 import { Logout } from "../features/auth/logout";
-import ListaProfissionais from "../features/profissionais/components/cadastro-profissionais/lista-profissionais";
+import ListaProfissionais from "../features/profissionais/components/lista-profissionais/lista-profissionais";
 
 const menuItens = [
     { key: 'home', label: 'Home', icon: <HomeOutlined /> },

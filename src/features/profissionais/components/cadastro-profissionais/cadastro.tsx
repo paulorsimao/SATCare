@@ -1,64 +1,83 @@
-import React from 'react';
-import { Button, Form, Input } from 'antd';
+import { Form, Input, Select } from 'antd';
 import './styled.css'
-import { Link } from 'react-router-dom';
+import { Especialidade, useProfissionalContext } from '../../providers/profissionais-provider';
+import { useEffect } from 'react';
+import { useForm } from 'antd/es/form/Form';
 
-const onFinish = (values: any) => {
-    console.log('Success:', values);
-};
+const especialidadeOptions = Object.values(Especialidade).map((especialidade) => ({
+    label: especialidade,
+    value: especialidade
+}));
 
-const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-};
+type Props = {
+    id?: number,
+    onFinish?: (cadastrou: boolean) => void
+}
 
-const CadastroProfissionais: React.FC = () => (
-    <Form
-        name="basic"
-        layout="vertical"
-        initialValues={{ remember: true }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-    >
-        <Form.Item
-            label="Nome"
-            name="nome"
-            rules={[{ required: true, message: 'Por favor insira o nome!' }]}
+export default function CadastroProfissionais({ onFinish, id }: Props) {
+    const profissionalContext = useProfissionalContext();
+    const [form] = useForm()
+
+    const onSubmit = (values: any) => {
+        if (id) {
+            //atribui o id nos valores
+            values = { id, ...values}
+            profissionalContext.edit(id, values)
+        } else {
+            profissionalContext.create(values)
+        }
+
+        onFinish && onFinish(true)
+    };
+
+    const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+    };
+
+    useEffect(() => {
+        if (id) {
+            loadForm(profissionalContext.getOne(id))
+        }
+    }, [])
+
+    const loadForm = (dados: any) => {
+        form.setFieldsValue(dados)
+    }
+
+    return (
+        <Form
+            form={form}
+            id="form-profissional"
+            name="basic"
+            layout="vertical"
+            initialValues={{ remember: true }}
+            onFinish={onSubmit}
+            onFinishFailed={onFinishFailed}
+            autoComplete="off"
         >
-            <Input />
-        </Form.Item>
+            <Form.Item
+                label="Nome"
+                name="nome"
+                rules={[{ required: true, message: 'Por favor insira o nome!' }]}
+            >
+                <Input />
+            </Form.Item>
 
-        <Form.Item
-            label="E-mail"
-            name="email"
-            rules={[{ required: true, message: 'Por favor insira o e-mail!' }]}
-        >
-            <Input />
-        </Form.Item>
+            <Form.Item
+                label="Sobrenome"
+                name="sobrenome"
+                rules={[{ required: true, message: 'Por favor insira o sobrenome!' }]}
+            >
+                <Input />
+            </Form.Item>
 
-        <Form.Item
-            label="Telefone"
-            name="telefone"
-            rules={[{ required: true, message: 'Por favor insira o telefone!' }]}
-        >
-            <Input />
-        </Form.Item>
-
-        <Form.Item
-            label="Senha"
-            name="senha"
-            rules={[{ required: true, message: 'Por favor insira a senha!' }]}
-        >
-            <Input.Password />
-        </Form.Item>
-
-        <Form.Item>
-                <Button type="primary" htmlType="submit" style={{width: '100%'}}>
-                    Cadastra-se
-                </Button>
-                <Link to={'/login'}>Já possui conta? Faça login</Link>
-        </Form.Item>
-    </Form>
-);
-
-export default CadastroProfissionais;
+            <Form.Item
+                label="Especialidade"
+                name="especialidade"
+                rules={[{ required: true, message: 'Por favor insira a especialidade!' }]}
+            >
+                <Select placeholder="Selecione" options={especialidadeOptions} />
+            </Form.Item>
+        </Form>
+    )
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Table } from "antd";
 import { ColumnsType } from "antd/es/table";
 import UsuarioService, { IUsuario } from "../../services/usuarios-service";
@@ -7,7 +7,6 @@ const columns: ColumnsType<IUsuario> = [
     {
         title: 'Nome',
         dataIndex: 'nome',
-        render: (text: string) => <a>{text}</a>,
     },
     {
         title: 'Sobrenome',
