@@ -1,13 +1,8 @@
 import { Form, Input, Select } from 'antd';
 import './styled.css'
-import { Especialidade, useProfissionalContext } from '../../providers/profissionais-provider';
+import { especialidadeOptions, useProfissionalContext } from '../../providers/profissionais-provider';
 import { useEffect } from 'react';
 import { useForm } from 'antd/es/form/Form';
-
-const especialidadeOptions = Object.values(Especialidade).map((especialidade) => ({
-    label: especialidade,
-    value: especialidade
-}));
 
 type Props = {
     id?: number,

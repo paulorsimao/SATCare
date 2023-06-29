@@ -5,6 +5,7 @@ import customTheme from './antd.theme.json'
 import { useEffect, useState } from "react";
 import { AuthContextProvider } from "./features/auth/providers/auth-context";
 import Router from "./routes";
+import locale from "antd/locale/pt_BR";
 
 function App() {
     const [darkMode, setDarkMode] = useState(
@@ -29,6 +30,7 @@ function App() {
                 algorithm: darkMode ? theme.darkAlgorithm : theme.defaultAlgorithm,
                 ...customTheme
             }}
+            locale={locale}
         >
             <AuthContextProvider >
                 <Router />

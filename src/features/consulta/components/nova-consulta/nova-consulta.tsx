@@ -1,89 +1,110 @@
-import React from 'react';
-import { Button, Form, Row, Col, Select, DatePicker } from 'antd';
+import { Button, Form, Row, Col, Select, DatePicker, TimePicker } from 'antd';
+import { PageHeader } from '@ant-design/pro-components';
+import DefaultPageContainer from '../../../../components/page-container.tsx/page-container';
 import './style.css'
+import dayjs from 'dayjs';
+//@ts-ignore
+import dayjsBusinessDays from 'dayjs-business-days'
+import { ProfisisonalProvider, especialidadeOptions, useProfissionalContext } from '../../../profissionais/providers/profissionais-provider';
+
+dayjs.extend(dayjsBusinessDays);
 
 const onFinish = (values: any) => {
     console.log('Success:', values);
 };
 
-const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
-};
+function Cadastro() {
+    const profissionalContext = useProfissionalContext()
+    const profissionaisOptions = profissionalContext.get({ page: 1, pageSize: 10 }).data
 
-const NovaConsulta: React.FC = () => (
-    <div id='blocoCadastro'>
-        <Form
-            name="basic"
-            labelCol={{ span: 8 }}
-            wrapperCol={{ span: 16 }}
-            style={{ maxWidth: 600 }}
-            initialValues={{ remember: true }}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            autoComplete="off"
-        >
-            <Form.Item
-                label="Tipo de Serviço"
-                name="servico"
-                rules={[{ required: true, message: 'Selecione o tipo de serviço!' }]}
-            >
-                <Select>
-                    <Select.Option value="dentista">Dentista</Select.Option>
-                    <Select.Option value="psicologo">Psicólogo</Select.Option>
-                </Select>
-            </Form.Item>
+    const onFinishFailed = (errorInfo: any) => {
+        console.log('Failed:', errorInfo);
+    };
 
-            <Form.Item
-                label="Profissional"
-                name="profissionall"
-                rules={[{ required: true, message: 'Selecione o profissional!' }]}
-            >
-                <Select>
-                    <Select.Option value="profissional1">profissional1</Select.Option>
-                    <Select.Option value="profissinal2">profissional2</Select.Option>
-                    <Select.Option value="profissional3">profissional3</Select.Option>
-                </Select>
-            </Form.Item>
+    const getDisabledDates = (dayjs: any) => {
+        return !dayjs.isBusinessDay();
+    }
 
-            <Form.Item
-                label="Dia"
-                name="dia"
-                rules={[{ required: true, message: 'Escolha o dia da consulta!' }]}
-            >
-                <DatePicker />
-            </Form.Item>
-
-            <Form.Item
-                label="Horário"
-                name="horario"
-                rules={[{ required: true, message: 'Escolha o horário da consulta!' }]}
-            >
-                <Select>
-                    <Select.Option value="horario1">08h</Select.Option>
-                    <Select.Option value="horario2">09h</Select.Option>
-                    <Select.Option value="horario3">10h</Select.Option>
-                    <Select.Option value="horario4">11h</Select.Option>
-                    <Select.Option value="horario5">13h</Select.Option>
-                    <Select.Option value="horario6">14h</Select.Option>
-                    <Select.Option value="horario7">15h</Select.Option>
-                    <Select.Option value="horario8">16h</Select.Option>
-                    <Select.Option value="horario9">17h</Select.Option>
-                    <Select.Option value="horario10">18h</Select.Option>
-                </Select>
-            </Form.Item>
-
-            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+    const getDisabledHours = () => {
+        return [0, 1, 2, 3, 4, 5, 6, 7, 18, 19, 20, 21, 22, 23, 24]
+    }
+    
+    return (
+        <>
+            <PageHeader title="Agendar Consulta" />
+            <DefaultPageContainer>
                 <Row justify="center">
-                    <Col>
-                        <Button id="btnAgendar" htmlType="submit">
-                            AGENDAR
-                        </Button>
+                    <Col span={8} lg={8} sm={16} xs={20}>
+                        <Form
+                            name="basic"
+                            layout="vertical"
+                            initialValues={{ remember: true }}
+                            onFinish={onFinish}
+                            onFinishFailed={onFinishFailed}
+                            autoComplete="off"
+
+                        >
+                            <Form.Item
+                                label="Tipo de Serviço"
+                                name="servico"
+                                rules={[{ required: true, message: 'Selecione o tipo de serviço!' }]}
+                            >
+                                <Select placeholder="Selecione" options={especialidadeOptions} />
+                            </Form.Item>
+
+                            <Form.Item
+                                label="Profissional"
+                                name="profissionall"
+                                rules={[{ required: true, message: 'Selecione o profissional!' }]}
+                            >
+                                <Select
+                                    placeholder="Selecione"
+                                    fieldNames={{ label: 'nome', value: 'id', }}
+                                    options={profissionaisOptions} />
+                            </Form.Item>
+
+                            <Form.Item
+                                label="Dia"
+                                name="dia"
+                                rules={[{ required: true, message: 'Escolha o dia da consulta!' }]}
+                            >
+                                <DatePicker style={{ width: '100%' }} placeholder='Selecione o dia da consulta' disabledDate={getDisabledDates} />
+                            </Form.Item>
+
+                            <Form.Item
+                                label="Horário"
+                                name="horario"
+                                rules={[{ required: true, message: 'Escolha o horário da consulta!' }]}
+                            >
+                                <TimePicker style={{ width: '100%' }}
+                                    defaultValue={dayjs('11:30', 'HH:mm')}
+                                    format={'HH:mm'}
+                                    minuteStep={15}
+                                    disabledTime={() => ({
+                                        disabledHours: getDisabledHours
+                                    })}
+                                    hideDisabledOptions
+                                />
+                            </Form.Item>
+
+                            <Form.Item >
+                                <Row justify="center">
+                                    <Col>
+                                        <Button id="btnAgendar" htmlType="submit">
+                                            AGENDAR
+                                        </Button>
+                                    </Col>
+
+                                </Row>
+                            </Form.Item>
+                        </Form>
                     </Col>
-
                 </Row>
-            </Form.Item>
-        </Form>
-    </div>
-);
+            </DefaultPageContainer>
+        </>
+    )
+}
 
-export default NovaConsulta;
+export default function NovaConsulta() {
+    return <ProfisisonalProvider><Cadastro /></ProfisisonalProvider>
+}

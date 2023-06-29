@@ -7,6 +7,11 @@ export enum Especialidade {
     OFTALMOLOGISTA = "Oftalmologista"
 }
 
+export const especialidadeOptions = Object.values(Especialidade).map((especialidade) => ({
+    label: especialidade,
+    value: especialidade
+}));
+
 export interface Profissional {
     id: number,
     nome: string,
