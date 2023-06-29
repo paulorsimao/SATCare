@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Form, Input } from 'antd';
 import './styled.css'
 import { Link } from 'react-router-dom';
+import InputTelefone from '../../../../components/input-telefone/input-telefone';
 
 const onFinish = (values: any) => {
     console.log('Success:', values);
@@ -25,15 +26,15 @@ const CadastroUsuario: React.FC = () => (
             name="nome"
             rules={[{ required: true, message: 'Por favor insira o nome!' }]}
         >
-            <Input />
+            <Input placeholder='Digite seu nome'/>
         </Form.Item>
 
         <Form.Item
             label="E-mail"
             name="email"
-            rules={[{ required: true, message: 'Por favor insira o e-mail!' }]}
+            rules={[{ required: true, type: "email", message: 'Por favor insira um e-mail válido!' }]}
         >
-            <Input />
+            <Input placeholder='Digite seu email'/>
         </Form.Item>
 
         <Form.Item
@@ -41,7 +42,7 @@ const CadastroUsuario: React.FC = () => (
             name="telefone"
             rules={[{ required: true, message: 'Por favor insira o telefone!' }]}
         >
-            <Input />
+            <InputTelefone placeholder="Digite seu telefone" />
         </Form.Item>
 
         <Form.Item
@@ -49,7 +50,7 @@ const CadastroUsuario: React.FC = () => (
             name="senha"
             rules={[{ required: true, message: 'Por favor insira a senha!' }]}
         >
-            <Input.Password />
+            <Input.Password placeholder='Digite sua senha' />
         </Form.Item>
 
         <Form.Item>

@@ -43,7 +43,7 @@ export default function Login() {
                     { required: true, type: "email", message: "Insira um email válido" }
                 ]}
             >
-                <Input></Input>
+                <Input placeholder="Digite seu email"/>
             </Form.Item>
 
             <Form.Item

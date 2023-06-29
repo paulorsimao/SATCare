@@ -97,7 +97,7 @@ function Lista() {
                     onChange={handleTableChange}
                 />
 
-                <Modal title="Basic Modal" open={isModalOpen} onCancel={closeModal}
+                <Modal title="Cadastro de profissional" open={isModalOpen} onCancel={closeModal}
                     footer={[
                         <Button key="cancel" onClick={closeModal} type="text">Cancelar</Button>,
                         <Button key="submit" form="form-profissional" type="primary" htmlType="submit">Cadastrar</Button>
