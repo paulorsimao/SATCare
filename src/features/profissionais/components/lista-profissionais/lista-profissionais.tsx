@@ -43,6 +43,7 @@ function Lista() {
     };
 
     const closeModal = () => {
+        setIdSelecionado(undefined)
         setIsModalOpen(false);
         handleTableChange(pagination)
     };
@@ -87,7 +88,7 @@ function Lista() {
             ></PageHeader>
             <DefaultPageContainer>
                 <Row style={{ marginBottom: '16px' }}>
-                    <Search placeholder="input search text" onSearch={onSearch} style={{ width: 200 }} />
+                    <Search placeholder="Buscar..." onSearch={onSearch} style={{ width: 200 }} />
                 </Row>
                 <Table
                     columns={columns}

@@ -33,7 +33,7 @@ export default function CadastroProfissionais({ onFinish, id }: Props) {
         if (id) {
             loadForm(profissionalContext.getOne(id))
         }
-    }, [])
+    }, [id])
 
     const loadForm = (dados: any) => {
         form.setFieldsValue(dados)
